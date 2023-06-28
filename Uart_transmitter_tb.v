@@ -62,7 +62,7 @@ module UART_TB ();
   initial 
   begin
     // Required to dump signals to EPWave
-    $dumpfile("dump.vcd");
-    $dumpvars(0);
+    $dumpfile("trans.vcd");
+    $dumpvars(0,UART_TB);
   end
 endmodule
