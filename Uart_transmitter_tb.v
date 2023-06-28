@@ -1,4 +1,5 @@
 `include "Uart_transmitter.v"
+`include "Uart_receiver.v"
 `timescale 1ns/10ps
 
 //`include "UART_TX.v"
