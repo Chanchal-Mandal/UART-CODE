@@ -1,4 +1,5 @@
-`include "Uart_transmitter.v,Uart_receiver.v"
+`include "Uart_transmitter.v"
+`include "Uart_receiver.v"
 
 `timescale 1ns/10ps
 
@@ -20,8 +21,7 @@ module UART_TB ();
   reg [7:0] r_TX_Byte = 0;
   wire [7:0] w_RX_Byte;
 
- UART_RX  #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) 
- UART_RX UART_RX_Inst(.i_Clock(r_Clock),.i_RX_Serial(w_UART_Line),.o_RX_DV(w_RX_DV),.o_RX_Byte(w_RX_Byte));
+ UART_RX  #(.CLKS_PER_BIT(c_CLKS_PER_BIT))  UART_RX_Inst(.i_Clock(r_Clock),.i_RX_Serial(w_UART_Line),.o_RX_DV(w_RX_DV),.o_RX_Byte(w_RX_Byte));
   
   UART_TX #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_Inst
     (.i_Clock(r_Clock),
